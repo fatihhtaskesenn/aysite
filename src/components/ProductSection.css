@@ -482,25 +482,61 @@
   cursor: pointer;
 }
 
+.btn-mobile-filter-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.btn-mobile-filter-toggle .rotated {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 900px) {
   .product-layout-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
 
 @media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.6rem !important;
+  .btn-mobile-filter-toggle {
+    display: inline-flex !important;
   }
-  
+
+  /* Hide filter sidebar by default on mobile so products are immediately visible */
   .filter-sidebar {
-    padding: 1rem !important;
-    margin-bottom: 1rem !important;
+    display: none !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  /* Show filter sidebar when user clicks the Filtreler button */
+  .filter-sidebar.mobile-show {
+    display: block !important;
+    animation: fadeIn 0.2s ease !important;
+  }
+
+  .product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .header-controls {
+    width: 100% !important;
+    justify-content: space-between !important;
   }
 
   .sort-dropdown-container select {
-    font-size: 0.8rem !important;
-    padding: 0.4rem 0.6rem !important;
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0.5rem !important;
   }
 }

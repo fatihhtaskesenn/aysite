@@ -23,6 +23,7 @@ export default function ProductSection({
   const [selectedBrand, setSelectedBrand] = useState('all');
   const [selectedCarpetSize, setSelectedCarpetSize] = useState('all');
   const [selectedCarpetMaterial, setSelectedCarpetMaterial] = useState('all');
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   // Fetch products from database
   useEffect(() => {
@@ -111,6 +112,16 @@ export default function ProductSection({
           </div>
 
           <div className="header-controls">
+            {/* Mobile Filter Toggle Button */}
+            <button 
+              className="btn-mobile-filter-toggle"
+              onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
+            >
+              <Filter size={16} /> 
+              <span>Filtreler {hasActiveFilters ? '(Aktif)' : ''}</span>
+              <ChevronDown size={14} className={isMobileFilterOpen ? 'rotated' : ''} />
+            </button>
+
             {/* Sort Dropdown */}
             <div className="sort-dropdown-container">
               <ArrowUpDown size={16} className="sort-icon" />
@@ -223,7 +234,7 @@ export default function ProductSection({
         <div className="product-layout-grid">
           
           {/* Left Sidebar Filters ("Sol Köşe") */}
-          <aside className="filter-sidebar">
+          <aside className={`filter-sidebar ${isMobileFilterOpen ? 'mobile-show' : ''}`}>
             <div className="filter-card">
               
               <div className="filter-card-header">
