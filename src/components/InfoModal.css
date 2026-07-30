@@ -1,0 +1,452 @@
+/* INFO MODAL OVERLAY & CARD STYLES */
+.info-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+.info-modal-card {
+  background: #ffffff !important;
+  width: 100% !important;
+  max-width: 960px !important;
+  height: 85vh !important;
+  max-height: 720px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+}
+
+.info-modal-header {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  padding: 1.2rem 1.8rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 3px solid #d90429 !important;
+}
+
+.info-header-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+.info-badge-icon {
+  width: 44px !important;
+  height: 44px !important;
+  background: #d90429 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4) !important;
+}
+
+.info-header-title h3 {
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 0.2rem !important;
+}
+
+.info-header-title p {
+  font-size: 0.8rem !important;
+  color: #94a3b8 !important;
+  margin: 0 !important;
+}
+
+.info-close-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.info-close-btn:hover {
+  background: #d90429 !important;
+  border-color: #d90429 !important;
+}
+
+/* LAYOUT BODY & SIDEBAR */
+.info-modal-body {
+  display: flex !important;
+  flex-grow: 1 !important;
+  overflow: hidden !important;
+}
+
+.info-sidebar-nav {
+  width: 250px !important;
+  background: #f8fafc !important;
+  border-right: 1px solid #e2e8f0 !important;
+  padding: 1.2rem 0.8rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.35rem !important;
+  overflow-y: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.nav-group-title {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.4rem 0.6rem !important;
+}
+
+.info-nav-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  padding: 0.65rem 0.8rem !important;
+  border-radius: 10px !important;
+  border: none !important;
+  background: transparent !important;
+  color: #475569 !important;
+  font-size: 0.86rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  transition: all 0.2s ease !important;
+}
+
+.info-nav-item:hover {
+  background: #fee2e2 !important;
+  color: #d90429 !important;
+}
+
+.info-nav-item.active {
+  background: #d90429 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(217, 4, 41, 0.25) !important;
+}
+
+/* CONTENT AREA */
+.info-tab-content-area {
+  flex-grow: 1 !important;
+  padding: 2rem !important;
+  overflow-y: auto !important;
+  background: #ffffff !important;
+}
+
+.tab-pane {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.4rem !important;
+}
+
+.pane-title h2 {
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.pane-title p {
+  font-size: 0.88rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+}
+
+/* ASK QUESTION FORM */
+.ask-question-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 1.4rem !important;
+  border-radius: 14px !important;
+}
+
+.form-row-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1rem !important;
+}
+
+.info-label {
+  font-size: 0.83rem !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  margin-bottom: 0.35rem !important;
+  display: block !important;
+}
+
+.info-input,
+.info-select,
+.info-textarea {
+  width: 100% !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 10px !important;
+  border: 1.5px solid #cbd5e1 !important;
+  background: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+.info-input:focus,
+.info-select:focus,
+.info-textarea:focus {
+  border-color: #d90429 !important;
+  box-shadow: 0 0 0 4px rgba(217, 4, 41, 0.15) !important;
+}
+
+.btn-send-question {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  background: #d90429 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.85rem 1.6rem !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(217, 4, 41, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-send-question:hover {
+  background: #b90320 !important;
+}
+
+.question-success-box {
+  background: #ecfdf5 !important;
+  border: 1px solid #a7f3d0 !important;
+  padding: 2.5rem !important;
+  border-radius: 16px !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+}
+
+.btn-new-question {
+  background: #059669 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.65rem 1.4rem !important;
+  border-radius: 8px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+}
+
+.quick-contact-strip {
+  display: flex !important;
+  gap: 1.5rem !important;
+  margin-top: 0.5rem !important;
+}
+
+.contact-strip-item {
+  flex: 1 !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 0.85rem 1.2rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+  color: #d90429 !important;
+}
+
+.contact-strip-item div span {
+  display: block !important;
+  font-size: 0.75rem !important;
+  color: #64748b !important;
+}
+
+.contact-strip-item div strong {
+  font-size: 0.95rem !important;
+  color: #0f172a !important;
+}
+
+/* ORDER TRACKING FORM */
+.order-search-box-card {
+  background: #f8fafc !important;
+  padding: 1.5rem !important;
+  border-radius: 14px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.search-input-wrap {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.8rem !important;
+}
+
+.search-input-wrap .search-icon {
+  position: absolute !important;
+  left: 1rem !important;
+  color: #94a3b8 !important;
+}
+
+.order-track-input {
+  width: 100% !important;
+  padding: 0.85rem 1rem 0.85rem 2.8rem !important;
+  border-radius: 10px !important;
+  border: 1.5px solid #cbd5e1 !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.btn-track-submit {
+  background: #d90429 !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 0.85rem 1.5rem !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.found-order-card {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 14px !important;
+  padding: 1.4rem !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04) !important;
+}
+
+.order-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  padding-bottom: 0.8rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+.order-code-badge {
+  background: #fee2e2 !important;
+  color: #d90429 !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  padding: 0.25rem 0.6rem !important;
+  border-radius: 4px !important;
+}
+
+.order-status-pill {
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  padding: 0.3rem 0.75rem !important;
+  border-radius: 20px !important;
+}
+
+.order-status-pill.pending { background: #fef3c7 !important; color: #b45309 !important; }
+.order-status-pill.completed { background: #ecfdf5 !important; color: #047857 !important; }
+
+.no-order-found-alert {
+  background: #fff1f2 !important;
+  border: 1px solid #fecdd3 !important;
+  color: #991b1b !important;
+  padding: 1.2rem !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+}
+
+/* FAQ ACCORDION */
+.faq-accordion-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+}
+
+.faq-item {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 1.2rem !important;
+  border-radius: 12px !important;
+}
+
+.faq-item h4 {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 0.4rem !important;
+}
+
+.faq-item p {
+  font-size: 0.88rem !important;
+  color: #475569 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* TEXT ARTICLES (TERMS, PRIVACY, KVKK, RETURNS, WARRANTY) */
+.text-article {
+  color: #334155 !important;
+  line-height: 1.7 !important;
+  font-size: 0.92rem !important;
+}
+
+.text-article h2 {
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 1rem !important;
+  border-bottom: 2px solid #fee2e2 !important;
+  padding-bottom: 0.6rem !important;
+}
+
+.text-article h3 {
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+  margin: 1.4rem 0 0.5rem !important;
+}
+
+.text-article p {
+  margin-bottom: 0.8rem !important;
+}
+
+.text-article ul {
+  padding-left: 1.2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.text-article li {
+  margin-bottom: 0.4rem !important;
+}
+
+@media (max-width: 768px) {
+  .info-modal-body { flex-direction: column !important; }
+  .info-sidebar-nav { width: 100% !important; border-right: none !important; border-bottom: 1px solid #e2e8f0 !important; max-height: 160px !important; }
+  .form-row-2 { grid-template-columns: 1fr !important; }
+}

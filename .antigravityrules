@@ -1,0 +1,36 @@
+# Çeyza E-Ticaret Perakende Mağazası Kuralları (.antigravityrules)
+
+## 1. Proje Konsepti ve Mimarisi
+- **Konsept**: Çeyza - Fiziksel Ürün Satışı Yapan Gerçek E-Ticaret Perakende Mağazası.
+- **Framework**: Vite + React (JavaScript ES6+)
+- **Stil Yönetimi**: Light Theme Vanilla CSS (Custom Properties / Design Tokens, Flexbox, CSS Grid)
+- **İkon Kütüphanesi**: `lucide-react`
+- **Tasarım Dili**: Ferah, açık gri ve beyaz zeminli, güven veren perakende tasarımı. Koyu (dark) temalar kullanılmayacaktır.
+
+## 2. 7 Ana Ürün Kategorisi ve Alt Kategoriler
+1. **Küçük Ev Aletleri**:
+   - *Süpürgeler*: Dikey, Robot, Şarjlı, Toz Torbalı, Toz Torbasız, El Süpürgesi, Islak-Kuru, Halı Yıkama, Buharlı Temizleyici.
+   - *Mutfak Elektronikleri*: Blender & Setler, Mikser, Mutfak Şefi, Doğrayıcı & Rondo, Tost & Waffle Makinesi, Izgara, Airfryer & Fritöz, Kettle, Elektrikli Çay & Kahve Makineleri (Türk Kahvesi, Filtre, Espresso), Narenciye & Katı Meyve Sıkacağı, Ekmek Kızartma.
+   - *Ev Konfor*: Buharlı & Buhar Kazanlı Ütü, Vantilatör, Hava Temizleyici, Isıtıcı.
+2. **Beyaz Eşya**:
+   - Buzdolabı, Derin Dondurucu, Çamaşır Makinesi, Kurutma Makinesi, Bulaşık Makinesi, Fırın, Ankastre Fırın & Ocak, Davlumbaz & Aspiratör, Mikrodalga & Mini Fırın.
+3. **Mutfak Ürünleri**:
+   - Tencere & Tava Setleri, Düdüklü Tencere, Cezve, Çaydanlık, Yemek & Kahvaltı Takımları, Çatal-Kaşık-Bıçak Setleri, Bardak & Fincan & Kupalar, Servis Ürünleri, Tabaklar, Tepsiler, Saklama & Erzak Kapları, Kavanozlar, Bıçaklar & Kesme Tahtaları, Mutfak Gereçleri (Rende, Süzgeç, Kepçe, Spatula, Maşa, Çırpıcı).
+4. **Elektronik Cihazlar**:
+   - Akıllı Telefonlar, Tabletler, Laptop & Masaüstü Bilgisayarlar, Monitörler, Oyun Konsolları (PlayStation, Xbox, Nintendo) & Aksesuarları, Akıllı Saatler & Bileklikler, Kulaklıklar, Bluetooth Hoparlörler, Televizyonlar (Smart, LED, QLED, OLED), Şarj Cihazları, Kablolar & Powerbank.
+5. **Ev Tekstili**:
+   - Nevresim Takımları, Çarşaflar, Yastık & Kılıfları, Yatak Örtüleri, Pike Takımları, Battaniyeler, Alezler, Bornoz & Havlular (El, Banyo), Banyo Paspasları & Setleri, Duş Perdeleri, Perde & Tül & Fon Perde, Masa Örtüsü & Runner, Mutfak Havluları.
+6. **Kişisel Bakım Ürünleri**:
+   - Saç Şekillendirme (Düzleştirici, Maşa, Şekillendirici), Saç Kurutma, Saç & Sakal & Vücut Tıraş Makineleri, Burun/Kulak Kılı Kesme, Epilasyon & IPL Cihazları, Ağda Makineleri, Elektrikli Diş Fırçaları, Manikür & Pedikür Setleri, Masaj Aletleri.
+7. **Halılar**:
+   - Odalar (Salon, Oturma Odası, Yatak Odası, Çocuk Odası, Mutfak), Yolluk & Koridor & Antre, Banyo Paspasları.
+   - Tarz (Modern, Klasik, Makine, El Dokuma, Kilim, Shaggy).
+   - Filtreler: Ölçü (En/Boy), Renk, Desen, Materyal, Kullanım Alanı.
+
+## 3. Kullanıcı Deneyimi ve E-Ticaret Özellikleri
+- Mega Menü ile kategorilere kolay erişim.
+- Anlık canlı ürün arama ve filtreleme.
+- Sepet Çekmecesi (Cart Drawer): Canlı toplam tutar hesaplama, miktar artırma/azaltma, ücretsiz kargo durum çubuğu.
+- Hızlı Ürün Detay Penceresi (Quick View Modal) ve Taksit Seçenekleri Tablosu.
+- Fiziksel Mağaza Bulucu ("Mağazadan Teslim Al").
+- Kampanya rozetleri ("Peşin Fiyatına 6 Taksit", "%30 İndirim", "Ücretsiz Kargo").
