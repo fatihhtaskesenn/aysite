@@ -179,7 +179,37 @@
 }
 
 @media (max-width: 768px) {
-  .slider-nav-btn { display: none; }
-  .deals-header-row { flex-direction: column; align-items: flex-start; }
-  .deals-countdown-box { align-items: flex-start; width: 100%; }
+  .deals-carousel-section {
+    padding: 1.5rem 0 !important;
+  }
+
+  .deals-header-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.8rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .deals-title-area h2 {
+    font-size: 1.35rem !important;
+  }
+
+  .deals-countdown-box {
+    width: 100% !important;
+    justify-content: space-between !important;
+    padding: 0.6rem 0.9rem !important;
+  }
+
+  .countdown-label {
+    font-size: 0.75rem !important;
+  }
+
+  .deal-card-item {
+    flex: 0 0 200px !important;
+    width: 200px !important;
+  }
+
+  .slider-nav-btn {
+    display: none !important;
+  }
 }

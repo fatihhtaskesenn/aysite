@@ -22,6 +22,8 @@ export default function Header({
 }) {
   const [activeMegaMenu, setActiveMegaMenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedMobileCat, setExpandedMobileCat] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -173,10 +175,108 @@ export default function Header({
                 </div>
               </button>
 
+              {/* Mobile Hamburger Toggle Button */}
+              <button 
+                className="mobile-hamburger-btn"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Mobil Menü"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+
             </div>
 
           </div>
         </div>
+
+        {/* Mobile Navigation Drawer Modal */}
+        {isMobileMenuOpen && (
+          <div className="mobile-drawer-overlay" onClick={() => setIsMobileMenuOpen(false)}>
+            <div className="mobile-drawer-content" onClick={(e) => e.stopPropagation()}>
+              <div className="mobile-drawer-header">
+                <h3>Çeyza Menü</h3>
+                <button className="mobile-drawer-close" onClick={() => setIsMobileMenuOpen(false)}>
+                  <X size={22} />
+                </button>
+              </div>
+
+              {/* Mobile Quick Actions Bar */}
+              <div className="mobile-drawer-actions">
+                <button className="mobile-action-card" onClick={() => { setIsMobileMenuOpen(false); onOpenTaksit(); }}>
+                  <CreditCard size={18} />
+                  <span>Taksit Öde</span>
+                </button>
+                <button className="mobile-action-card highlight" onClick={() => { setIsMobileMenuOpen(false); onOpenInfoModal('ask-question'); }}>
+                  <MessageSquare size={18} />
+                  <span>Soru Sor</span>
+                </button>
+              </div>
+
+              {/* Mobile Category List Accordion */}
+              <div className="mobile-category-list">
+                <button 
+                  className="mobile-cat-item main-cat-all"
+                  onClick={() => {
+                    handleSelectCategoryAndSubcat('all', 'all');
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  <span>Tüm Ürünlerimiz</span>
+                </button>
+
+                {mainCategories.map((cat) => (
+                  <div key={cat.id} className="mobile-cat-group">
+                    <button 
+                      className={`mobile-cat-item ${expandedMobileCat === cat.id ? 'expanded' : ''}`}
+                      onClick={() => setExpandedMobileCat(expandedMobileCat === cat.id ? null : cat.id)}
+                    >
+                      <span>{cat.name}</span>
+                      <ChevronDown size={16} className="mobile-cat-arrow" />
+                    </button>
+
+                    {expandedMobileCat === cat.id && (
+                      <div className="mobile-subcat-list">
+                        <button 
+                          className="mobile-subcat-all-btn"
+                          onClick={() => {
+                            handleSelectCategoryAndSubcat(cat.slug, 'all');
+                            setIsMobileMenuOpen(false);
+                          }}
+                        >
+                          Tüm {cat.name} Ürünleri
+                        </button>
+                        {cat.subcategories.map((subGroup, sIdx) => (
+                          <div key={sIdx} className="mobile-subgroup-block">
+                            <span className="mobile-subgroup-title">{subGroup.title}</span>
+                            {subGroup.items.map((subItem, iIdx) => (
+                              <button 
+                                key={iIdx}
+                                className="mobile-subcat-item"
+                                onClick={() => {
+                                  handleSelectCategoryAndSubcat(cat.slug, subItem);
+                                  setIsMobileMenuOpen(false);
+                                }}
+                              >
+                                {subItem}
+                              </button>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile Footer Contacts */}
+              <div className="mobile-drawer-footer">
+                <a href="tel:08506441616" className="mobile-phone-link">
+                  <Phone size={16} /> 0850 644 1616 (Müşteri Hizmetleri)
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Dynamic Mega-Menu Category Bar */}
         <div className="innovative-category-bar">
