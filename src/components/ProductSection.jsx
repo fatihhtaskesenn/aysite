@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import ProductCard from './ProductCard';
 import { mainCategories, carpetFilters } from '../data/categories';
 import { fetchProducts } from '../services/productService';
-import { SlidersHorizontal, ArrowUpDown, Filter, RotateCcw, Check, Sparkles, PackageX, ChevronRight, CheckSquare, Square, X } from 'lucide-react';
+import { SlidersHorizontal, ArrowUpDown, Filter, RotateCcw, Check, Sparkles, PackageX, ChevronRight, ChevronDown, CheckSquare, Square, X } from 'lucide-react';
 import './ProductSection.css';
 
 export default function ProductSection({ 
