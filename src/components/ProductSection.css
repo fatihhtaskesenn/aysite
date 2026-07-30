@@ -524,6 +524,7 @@
     animation: fadeIn 0.2s ease !important;
   }
 
+  .product-cards-grid,
   .product-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
