@@ -62,8 +62,11 @@ export default function DealsCarousel({ onAddToCart, onQuickView }) {
         {/* Deals Header with Countdown */}
         <div className="deals-header-row">
           <div className="deals-title-area">
-            <h2>Haftanın Fırsat Ürünleri</h2>
-            <p>Sınırlı stok ve özel taksit avantajlarıyla sunulan kampanya ürünleri.</p>
+            <span className="deals-badge-pill">
+              <Flame size={14} className="flame-icon" /> Sınırlı Zaman Fırsatları
+            </span>
+            <h2>Haftanın Öne Çıkan Kampanyaları</h2>
+            <p>Seçili ürünlerde sınırlı stok ve özel peşinatsız taksit fırsatlarını kaçırmayın.</p>
           </div>
 
           <div className="deals-countdown-box">

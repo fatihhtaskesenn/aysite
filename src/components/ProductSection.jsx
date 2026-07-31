@@ -100,6 +100,31 @@ export default function ProductSection({
     <section className="product-section" id="products">
       <div className="container">
         
+        {/* Mobile Horizontal Quick Chips Bar */}
+        <div className="mobile-quick-chips-bar">
+          <button 
+            className={`chip-btn filter-chip ${isMobileFilterOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
+          >
+            <Filter size={14} /> <span>Filtrele {hasActiveFilters ? '•' : ''}</span>
+          </button>
+          <button 
+            className={`chip-btn ${selectedCategory === 'all' ? 'active' : ''}`}
+            onClick={() => { setSelectedCategory('all'); if (setSelectedSubcat) setSelectedSubcat('all'); }}
+          >
+            Tüm Ürünler
+          </button>
+          {mainCategories.map(cat => (
+            <button 
+              key={cat.id}
+              className={`chip-btn ${selectedCategory === cat.slug ? 'active' : ''}`}
+              onClick={() => { setSelectedCategory(cat.slug); if (setSelectedSubcat) setSelectedSubcat('all'); }}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
+
         {/* Section Header */}
         <div className="product-section-header">
           <div>

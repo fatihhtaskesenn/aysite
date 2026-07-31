@@ -130,43 +130,6 @@ export default function HeroBanner() {
           ))}
         </div>
 
-        {/* Retail Trust Features Row */}
-        <div className="container">
-          <div className="trust-features-row">
-            <div className="trust-item">
-              <div className="trust-icon"><Truck size={24} color="#d90429" /></div>
-              <div>
-                <strong>Ücretsiz Kargo</strong>
-                <span>500 TL üzeri tüm alışverişlerde</span>
-              </div>
-            </div>
-
-            <div className="trust-item">
-              <div className="trust-icon"><Store size={24} color="#d90429" /></div>
-              <div>
-                <strong>Mağazadan Teslimat</strong>
-                <span>Fiziksel Çeyza Mağazalarından teslim alabilirsiniz</span>
-              </div>
-            </div>
-
-            <div className="trust-item">
-              <div className="trust-icon"><CreditCard size={24} color="#d90429" /></div>
-              <div>
-                <strong>Peşin Fiyatına Taksit</strong>
-                <span>Tüm kartlara 12 taksite varan fırsatlar</span>
-              </div>
-            </div>
-
-            <div className="trust-item">
-              <div className="trust-icon"><ShieldCheck size={24} color="#d90429" /></div>
-              <div>
-                <strong>%100 Orijinal Garanti</strong>
-                <span>Resmi faturalı ve 2 yıl Çeyza güvencesi</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       {/* Lightbox Modal for Enlarging Pure Images */}
