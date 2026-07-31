@@ -501,8 +501,9 @@
   transform: rotate(180deg);
 }
 
+.mobile-quick-chips-bar,
 .mobile-subcat-chips-bar {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 900px) {
