@@ -20,16 +20,22 @@ export default function App() {
 
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 'a1000000-0000-0000-0000-000000000001',
-      name: 'Dyson V15 Detect Kablosuz Dik Süpürge',
-      brand: 'Çeyza Home',
-      price: 24999,
-      image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&auto=format&fit=crop&q=80',
-      quantity: 1
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const stored = localStorage.getItem('ceyza_cart_items');
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      return [];
     }
-  ]);
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('ceyza_cart_items', JSON.stringify(cartItems));
+    } catch (e) {
+      console.warn('Cart save error:', e);
+    }
+  }, [cartItems]);
   
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isStoreModalOpen, setIsStoreModalOpen] = useState(false);

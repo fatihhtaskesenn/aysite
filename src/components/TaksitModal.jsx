@@ -127,11 +127,11 @@ export default function TaksitModal({ isOpen, onClose }) {
               </div>
 
               <form onSubmit={handlePay} className="taksit-payment-form">
-                <h4>Kredi Kartı ile Hızlı Öde</h4>
+                <h4>Kredi Kartı ile Güvenli Öde</h4>
                 
                 <div className="form-group">
                   <label>Kart Üzerindeki İsim</label>
-                  <input type="text" required placeholder="Ad Soyad" defaultValue="Ahmet Yılmaz" />
+                  <input type="text" required placeholder="Ad Soyad..." defaultValue="Ahmet Yılmaz" />
                 </div>
 
                 <div className="form-group">
@@ -139,14 +139,14 @@ export default function TaksitModal({ isOpen, onClose }) {
                   <input type="text" required maxLength={19} placeholder="4543 **** **** 1234" defaultValue="4543 1234 5678 1234" />
                 </div>
 
-                <div className="form-row-2">
+                <div className="form-row">
                   <div className="form-group">
-                    <label>SKT (AY/YIL)</label>
-                    <input type="text" required placeholder="12/28" defaultValue="08/28" />
+                    <label>Son Kullanma (AY/YIL)</label>
+                    <input type="text" required placeholder="08/28" defaultValue="08/28" />
                   </div>
                   <div className="form-group">
-                    <label>CVC / CVV</label>
-                    <input type="text" required maxLength={3} placeholder="123" defaultValue="882" />
+                    <label>CVC Güvenlik Kodu</label>
+                    <input type="text" required maxLength={4} placeholder="882" defaultValue="882" />
                   </div>
                 </div>
 
@@ -164,11 +164,13 @@ export default function TaksitModal({ isOpen, onClose }) {
 
           {step === 'success' && (
             <div className="taksit-success-view">
-              <CheckCircle2 size={56} className="text-emerald" />
-              <h3>Taksit Ödemeniz Başarıyla Gerçekleşti!</h3>
-              <p>1.250,00 TL tutarındaki taksit ödemeniz Çeyza AVM mağaza hesabınıza işlenmiştir. Makbuz e-posta ve SMS olarak iletilmiştir.</p>
+              <div className="success-icon-wrapper">
+                <CheckCircle2 size={40} />
+              </div>
+              <h3>Taksit Ödemeniz Alındı!</h3>
+              <p>1.250,00 TL tutarındaki taksit ödemeniz Çeyza AVM sistemine başarıyla işlenmiştir. İşlem dekontu SMS ve e-posta olarak iletilmiştir.</p>
               <button className="btn-taksit-submit" onClick={handleReset}>
-                Yeni Sorgulama Yap
+                Başka Taksit Sorgula
               </button>
             </div>
           )}

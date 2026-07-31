@@ -153,9 +153,20 @@ export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantit
                 <strong className="total-price">{finalTotal.toLocaleString('tr-TR')} TL</strong>
               </div>
 
-              <button className="btn btn-primary checkout-btn" onClick={handleCheckout}>
-                Siparişi Tamamla <ArrowRight size={18} />
-              </button>
+              <div className="cart-checkout-actions">
+                <button className="btn btn-primary checkout-btn" onClick={handleCheckout} disabled={isSubmitting}>
+                  {isSubmitting ? 'İşleniyor...' : 'Siparişi Tamamla'} <ArrowRight size={18} />
+                </button>
+
+                <a 
+                  href={`https://wa.me/908506441616?text=${encodeURIComponent(`Merhaba Çeyza AVM, sepetimdeki ürünler için sipariş vermek istiyorum:\n` + cartItems.map(i => `- ${i.name} (${i.quantity} Adet) - ${i.price * i.quantity} TL`).join('\n') + `\n\nToplam Tutarları: ${finalTotal.toLocaleString('tr-TR')} TL`)}`}
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-whatsapp-checkout"
+                >
+                  💬 WhatsApp ile Hızlı Sipariş Ver
+                </a>
+              </div>
             </div>
           </>
         )}
