@@ -3,7 +3,7 @@ import {
   Lock, LogOut, Package, ShoppingCart, Store, MessageSquare, Plus, Edit2, Trash2, 
   Search, Check, X, ShieldAlert, ArrowLeft, RefreshCw, Upload, Image as ImageIcon, Sparkles, Tag, Flame, CheckSquare, Square, Layers, DollarSign, FileText, Layout
 } from 'lucide-react';
-import { fetchProducts, createProduct, updateProduct, deleteProduct, uploadProductImage } from '../services/productService';
+import { fetchProducts, createProduct, updateProduct, deleteProduct, uploadProductImage, normalizeCategory } from '../services/productService';
 import { fetchAllOrders, updateOrderStatus } from '../services/orderService';
 import { fetchHeroBanners, createHeroBanner, updateHeroBanner, deleteHeroBanner } from '../services/heroService';
 import { fetchQuestions, updateQuestionStatus, deleteQuestion } from '../services/questionService';
@@ -346,7 +346,7 @@ export default function AdminPanel({ onExitAdmin }) {
   const filteredProducts = products.filter(p => {
     const matchesSearch = (p.title || p.name || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
                           (p.subcategory || '').toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCat = categoryFilter === 'all' || p.category === categoryFilter;
+    const matchesCat = categoryFilter === 'all' || normalizeCategory(p.category) === normalizeCategory(categoryFilter);
     return matchesSearch && matchesCat;
   });
 
@@ -527,7 +527,9 @@ export default function AdminPanel({ onExitAdmin }) {
                               <strong className="product-table-title">{product.title || product.name}</strong>
                             </td>
                             <td>
-                              <span className="cat-pill">{product.category}</span>
+                              <span className="cat-pill">
+                                {mainCategories.find(c => c.slug === normalizeCategory(product.category))?.name || product.category}
+                              </span>
                             </td>
                             <td>{product.subcategory || '-'}</td>
                             <td>
