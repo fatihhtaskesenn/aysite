@@ -266,59 +266,6 @@
 
 @media (max-width: 768px) {
   .hero-banner-section {
-    padding-top: 0.4rem !important;
-    padding-bottom: 0.6rem !important;
-  }
-
-  .hero-expanded-container {
-    padding: 0 0.5rem !important;
-  }
-
-  .hero-coverflow-container { 
-    height: 165px !important; 
-    perspective: none !important;
-  }
-
-  .coverflow-card { 
-    width: 95vw !important; 
-    max-width: 400px !important;
-    height: 155px !important; 
-    transform: none !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
-    will-change: transform !important;
-  }
-
-  .coverflow-card.center {
-    opacity: 1 !important;
-    z-index: 10 !important;
-  }
-
-  .coverflow-card.right-1, 
-  .coverflow-card.left-1, 
-  .coverflow-card.right-2, 
-  .coverflow-card.left-2 { 
-    display: none !important; 
-  }
-
-  .nav-btn {
-    width: 30px !important;
-    height: 30px !important;
-  }
-
-  .nav-btn.prev-btn { left: 4px !important; }
-  .nav-btn.next-btn { right: 4px !important; }
-
-  .hero-coverflow-dots {
-    margin-top: 0.4rem !important;
-  }
-
-  .coverflow-dot {
-    width: 8px !important;
-    height: 8px !important;
-  }
-
-  .coverflow-dot.active {
-    width: 20px !important;
+    display: none !important;
   }
 }

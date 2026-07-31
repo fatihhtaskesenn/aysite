@@ -501,7 +501,7 @@
   transform: rotate(180deg);
 }
 
-.mobile-quick-chips-bar {
+.mobile-subcat-chips-bar {
   display: none;
 }
 
@@ -513,7 +513,7 @@
 
 @media (max-width: 768px) {
   .product-section {
-    padding: 1.2rem 0 3rem !important;
+    padding: 0.8rem 0 3rem !important;
   }
 
   .mobile-quick-chips-bar {
@@ -522,19 +522,31 @@
     gap: 0.4rem !important;
     overflow-x: auto !important;
     white-space: nowrap !important;
-    padding: 0.4rem 0 0.6rem !important;
-    margin-bottom: 0.6rem !important;
+    padding: 0.4rem 0 0.5rem !important;
+    margin-bottom: 0.4rem !important;
     scrollbar-width: none !important;
     position: sticky !important;
-    top: 55px !important;
+    top: 50px !important;
     z-index: 95 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(6px) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(8px) !important;
     border-bottom: 1px solid #e2e8f0 !important;
   }
 
-  .mobile-quick-chips-bar::-webkit-scrollbar {
+  .mobile-quick-chips-bar::-webkit-scrollbar,
+  .mobile-subcat-chips-bar::-webkit-scrollbar {
     display: none !important;
+  }
+
+  .mobile-subcat-chips-bar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 0.2rem 0 0.5rem !important;
+    margin-bottom: 0.6rem !important;
+    scrollbar-width: none !important;
   }
 
   .chip-btn {
@@ -571,6 +583,27 @@
     border-color: #0f172a !important;
   }
 
+  .subchip-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.25rem 0.6rem !important;
+    border-radius: 6px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #64748b !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+
+  .subchip-btn.active {
+    background: #fff1f2 !important;
+    color: #d90429 !important;
+    border-color: #fecdd3 !important;
+    font-weight: 700 !important;
+  }
+
   .btn-mobile-filter-toggle {
     display: none !important;
   }
@@ -591,12 +624,12 @@
   .product-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.4rem !important;
+    gap: 0.35rem !important;
   }
 
   .product-section-header {
-    margin-bottom: 0.8rem !important;
-    padding-bottom: 0.6rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.4rem !important;
   }
 
   .header-controls {
@@ -605,7 +638,7 @@
   }
 
   .sort-dropdown-container select {
-    font-size: 0.75rem !important;
-    padding: 0.35rem 0.5rem !important;
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.45rem !important;
   }
 }

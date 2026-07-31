@@ -59,7 +59,7 @@ export default function DealsCarousel({ onAddToCart, onQuickView }) {
     <section className="deals-carousel-section">
       <div className="container">
         
-        {/* Deals Header with Countdown */}
+        {/* Deals Header */}
         <div className="deals-header-row">
           <div className="deals-title-area">
             <span className="deals-badge-pill">
@@ -67,28 +67,6 @@ export default function DealsCarousel({ onAddToCart, onQuickView }) {
             </span>
             <h2>Haftanın Öne Çıkan Kampanyaları</h2>
             <p>Seçili ürünlerde sınırlı stok ve özel peşinatsız taksit fırsatlarını kaçırmayın.</p>
-          </div>
-
-          <div className="deals-countdown-box">
-            <div className="countdown-label">
-              <Clock size={15} /> Kalan Süre:
-            </div>
-            <div className="countdown-timer">
-              <div className="time-block">
-                <span>{String(timeLeft.hours).padStart(2, '0')}</span>
-                <label>Saat</label>
-              </div>
-              <span className="colon">:</span>
-              <div className="time-block">
-                <span>{String(timeLeft.minutes).padStart(2, '0')}</span>
-                <label>Dakika</label>
-              </div>
-              <span className="colon">:</span>
-              <div className="time-block">
-                <span>{String(timeLeft.seconds).padStart(2, '0')}</span>
-                <label>Saniye</label>
-              </div>
-            </div>
           </div>
         </div>
 

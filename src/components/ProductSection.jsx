@@ -106,14 +106,16 @@ export default function ProductSection({
             className={`chip-btn filter-chip ${isMobileFilterOpen ? 'active' : ''}`}
             onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
           >
-            <Filter size={14} /> <span>Filtrele {hasActiveFilters ? '•' : ''}</span>
+            <Filter size={14} /> <span>Filtreler {hasActiveFilters ? '•' : ''}</span>
           </button>
+
           <button 
             className={`chip-btn ${selectedCategory === 'all' ? 'active' : ''}`}
             onClick={() => { setSelectedCategory('all'); if (setSelectedSubcat) setSelectedSubcat('all'); }}
           >
             Tüm Ürünler
           </button>
+
           {mainCategories.map(cat => (
             <button 
               key={cat.id}
@@ -124,6 +126,27 @@ export default function ProductSection({
             </button>
           ))}
         </div>
+
+        {/* Subcategories Mobile Chips (If a Category is selected) */}
+        {currentCatObj && currentCatObj.subcategories && (
+          <div className="mobile-subcat-chips-bar">
+            <button 
+              className={`subchip-btn ${selectedSubcat === 'all' ? 'active' : ''}`}
+              onClick={() => setSelectedSubcat && setSelectedSubcat('all')}
+            >
+              Tüm {currentCatObj.name}
+            </button>
+            {currentCatObj.subcategories.flatMap(g => g.items).map((subItem, sIdx) => (
+              <button 
+                key={sIdx}
+                className={`subchip-btn ${selectedSubcat === subItem ? 'active' : ''}`}
+                onClick={() => setSelectedSubcat && setSelectedSubcat(subItem)}
+              >
+                {subItem}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Section Header */}
         <div className="product-section-header">
